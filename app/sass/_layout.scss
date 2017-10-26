@@ -1,5 +1,5 @@
 .wrapper {
-  width: 62%;
+  width: 63%;
   margin: 0 auto;
 }
 
@@ -296,10 +296,10 @@
 
 .footer__main {
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   margin-bottom: 1rem;
   .company-logo {
+    min-width: 150px;
     margin-right: 3rem;
   }
   .mailto {
