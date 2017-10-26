@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <title>Icon kit preview | gulp-svg-sprites</title>
+    <link href="css/sprite.css" rel="stylesheet" type="text/css" media="all"/>
+    <style type="text/css">@CHARSET "UTF-8";
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        color: #666;
+        background: #fafafa;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        line-height: 1.4
+    }
+
+    header {
+        display: block;
+        padding: 3em 3em 2em 3em;
+        background-color: #fff
+    }
+
+    header p {
+        margin: 0 0 0 0;
+    }
+
+    nav {
+        font-size: .7em;
+        display: block;
+        width: 100%;
+        margin: 0 0 2em 0
+    }
+
+    nav a {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 2em;
+        color: #0f7595;
+        white-space: nowrap
+    }
+
+    nav a:hover {
+        text-decoration: underline
+    }
+
+    nav a.current {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #666
+    }
+
+    section {
+        border-top: 1px solid #eee;
+        padding: 2em 3em 0 3em
+    }
+
+    ul {
+        margin: 0;
+        padding: 0
+    }
+
+    .icon-boxes li {
+        display: inline-block;
+        background-color: #fff;
+        position: relative;
+        margin: 0 2em 2em 0;
+        vertical-align: top;
+        border: 1px solid #ccc;
+        padding: 1em 1em 1em 1em;
+        cursor: default
+    }
+
+    .icon-box {
+        margin: 0;
+        width: 144px;
+        height: 144px;
+        position: relative;
+        background: #ccc url(data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=) top left repeat;
+        border: 1px solid #ccc;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center
+    }
+    .icon-box.inverted {
+        background: black;
+    }
+
+    .icon {
+        display: inline;
+        display: inline-block
+    }
+
+    .snippet-popover {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 16px;
+        z-index: 1;
+        transition: all .3s;
+    }
+    .snippet-popover.active {
+        display: block;
+        opacity: 1;
+    }
+
+    pre {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin: 0;
+        padding: 5px 0;
+        font-size: 1em;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    footer {
+        display: block;
+        margin: 0;
+        padding: 0 3em 3em 3em
+    }
+
+    footer p {
+        margin: 0;
+        font-size: .7em
+    }
+
+    footer a {
+        color: #0f7595;
+        margin-left: 0
+    }
+    </style>
+
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
+	
+		<symbol id="fb" viewBox="0 0 8 17">
+			<defs><style>.cls-1{fill:#fff;fill-rule:evenodd}</style></defs><path id="f" class="cls-1" d="M1479 5004.33a11.09 11.09 0 0 0-2.52-.34c-2.7 0-3.78 1.35-3.78 3.76v1.76h-1.69v2.84h1.69v8.65h3.3v-8.65h2.41l.23-2.84H1476v-1.37c0-.77.07-1.26 1.12-1.26a8.972 8.972 0 0 1 1.47.17z" transform="translate(-1471 -5004)"></path>
+		</symbol>
+	
+		<symbol id="tw" viewBox="0 0 15.97 15">
+			<defs><style>.cls-1{fill:#fff;fill-rule:evenodd}</style></defs><path id="Фигура_4" data-name="Фигура 4" class="cls-1" d="M1528.79 5006.12a.5.5 0 0 0-.5-.07l-14.97 5.99a.492.492 0 0 0-.03.91l4.7 2.17 10.49-8.61-8.49 9.54v4.94l3.54-3.31 2.74 1.26a.537.537 0 0 0 .21.05.507.507 0 0 0 .49-.42l2-11.98a.511.511 0 0 0-.18-.47z" transform="translate(-1513 -5006)"></path>
+		</symbol>
+	
+		<symbol id="vk" viewBox="0 0 20 10.88">
+			<defs><style>.cls-1{fill:#fff;fill-rule:evenodd}</style></defs><path id="Фигура_1" data-name="Фигура 1" class="cls-1" d="M1424.8 5017.85h1.2a1.021 1.021 0 0 0 .54-.23.817.817 0 0 0 .17-.5s-.03-1.53.72-1.76c.73-.22 1.67 1.49 2.67 2.14a1.951 1.951 0 0 0 1.33.39l2.67-.04s1.4-.08.74-1.13a8.758 8.758 0 0 0-1.99-2.2c-1.67-1.48-1.45-1.24.57-3.81 1.23-1.57 1.72-2.52 1.56-2.93a1.2 1.2 0 0 0-1.05-.29l-3 .02a.732.732 0 0 0-.39.06.926.926 0 0 0-.27.31 15.616 15.616 0 0 1-1.11 2.24c-1.34 2.18-1.87 2.29-2.09 2.16-.51-.32-.38-1.27-.38-1.94 0-2.11.33-2.98-.65-3.21a5.209 5.209 0 0 0-1.41-.14 6.737 6.737 0 0 0-2.49.25c-.35.16-.61.52-.45.54a1.344 1.344 0 0 1 .89.42 2.656 2.656 0 0 1 .3 1.3s.17 2.48-.42 2.79c-.4.21-.96-.22-2.15-2.19a18.823 18.823 0 0 1-1.08-2.13.89.89 0 0 0-.24-.32 1.5 1.5 0 0 0-.47-.18l-2.85.02a1.007 1.007 0 0 0-.59.19.578.578 0 0 0-.01.49s2.24 5 4.77 7.52a7.041 7.041 0 0 0 4.96 2.16z" transform="translate(-1415.03 -5007)"></path>
+		</symbol>
+	
+</svg>
+
+<header>
+    <h1 id="logo">Gulp SVG Sprites <small>(3 icons in &lt;symbol&gt; mode)</small></h1>
+    <h4>Files Generated:</h4>
+    <ol>
+        <li><a href="svg/symbols.svg">svg/symbols.svg</a></li>
+    </ol>
+    <h4>Usage:</h4>
+    <ol>
+        <li>
+            Include the <strong>contents</strong> of the <a href="svg/symbols.svg">SVG file</a> just after the opening <code>&lt;body&gt;</code> tag.
+        </li>
+        <li>
+            Paste one of the snippets anywhere into your website.
+        </li>
+    </ol>
+
+</header>
+<section>
+    <ul class="icon-boxes">
+        
+
+        <li title="fb">
+            <div class="icon-box" id="icon-box-fb">
+                <svg class="icon fb">
+                    <use xlink:href="#fb" />
+                </svg>
+            </div>
+            <h2>fb</h2>
+            <button onclick="showPopover('snippet-fb')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-fb')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-fb">
+                <pre><code>&lt;svg class=&quot;icon fb&quot;&gt;&lt;use xlink:href=&quot;#fb&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="tw">
+            <div class="icon-box" id="icon-box-tw">
+                <svg class="icon tw">
+                    <use xlink:href="#tw" />
+                </svg>
+            </div>
+            <h2>tw</h2>
+            <button onclick="showPopover('snippet-tw')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-tw')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-tw">
+                <pre><code>&lt;svg class=&quot;icon tw&quot;&gt;&lt;use xlink:href=&quot;#tw&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="vk">
+            <div class="icon-box" id="icon-box-vk">
+                <svg class="icon vk">
+                    <use xlink:href="#vk" />
+                </svg>
+            </div>
+            <h2>vk</h2>
+            <button onclick="showPopover('snippet-vk')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-vk')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-vk">
+                <pre><code>&lt;svg class=&quot;icon vk&quot;&gt;&lt;use xlink:href=&quot;#vk&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+    </ul>
+</section>
+<footer>
+    <p>Generated by <a href="https://github.com/shakyshane/gulp-svg-sprites">Gulp Svg Sprites</a> - Preview page courtesy of <a href="http://iconizr.com" target="_blank">iconizr</a>.</p>
+</footer>
+<script type="text/javascript">
+    var openSnippet;
+    function showPopover(id) {
+        openSnippet = document.getElementById(id);
+        openSnippet.classList.add("active");
+    }
+    function hidePopover() {
+
+        openSnippet.classList.remove("active");
+    }
+    function invertBackground(id) {
+        var elem = document.getElementById(id);
+        elem.classList.toggle("inverted");
+    }
+</script>
+</body>
+</html>
