@@ -13,7 +13,8 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   ftp = require('vinyl-ftp'),
   notify = require("gulp-notify"),
-  rsync = require('gulp-rsync');
+  rsync = require('gulp-rsync'),
+  deploy = require('gulp-gh-pages');
 
 // Пользовательские скрипты проекта
 
@@ -98,22 +99,8 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function () {
 });
 
 gulp.task('deploy', function () {
-
-  var conn = ftp.create({
-    host: 'hostname.com',
-    user: 'username',
-    password: 'userpassword',
-    parallel: 10,
-    log: gutil.log
-  });
-
-  var globs = [
-    'dist/**',
-    'dist/.htaccess',
-  ];
-  return gulp.src(globs, {buffer: false})
-    .pipe(conn.dest('/path/to/folder/on/server'));
-
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
 });
 
 gulp.task('rsync', function () {

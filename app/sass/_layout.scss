@@ -1,5 +1,5 @@
 .wrapper {
-  width: 63%;
+  width: 62%;
   margin: 0 auto;
 }
 
@@ -54,7 +54,6 @@
 }
 
 .promo__title {
-  font-weight: normal;
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -135,19 +134,35 @@
   align-items: center;
   text-align: start;
   margin-bottom: 2rem;
+  &:first-child {
+    .wizard__item-content {
+      &:before {
+        background: linear-gradient(to top,  #eaebef 70%, #eaebef 70%, #ffffff 100%);
+      }
+    }
+  }
+  &:last-child {
+    .wizard__item-content {
+      &:before {
+        background: linear-gradient(to bottom,  #eaebef 70%, #eaebef 70%, #ffffff 100%);
+      }
+    }
+  }
 }
 
 .wizard__item-version {
-  width: 22%;
+  width: 24%;
   padding: 0 10% 0 0;
   .title {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
     color: $primary;
     line-height: 1.275rem;
   }
   .subtitle {
-    @include fontSize(0.875, 1)
+    font-weight: normal;
+    @include fontSize(0.875, 1);
+    color: #5e7186;
   }
 }
 
@@ -155,13 +170,13 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 77%;
-  padding: 1rem;
+  width: 70%;
+  padding: 1.5rem 1rem 2rem 1rem;
   margin-left: 3rem;
   background-color: #ffffff;
   border-radius: 0.5rem;
-  box-shadow: 0px 0px 57px 5px rgba(196,198,217,0.27);
-  &:before {
+  box-shadow: 0 0 57px 5px rgba(196,198,217,0.27);
+  &:after {
     content: '';
     left: -3rem;
     top: 50%;
@@ -172,6 +187,17 @@
     border-radius: 50%;
     transform: translate(-50%, -50%);
     background-color: $primary;
+  }
+  &:before {
+    content: '';
+    left: -3rem;
+    top: 50%;
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: calc(100% + 2rem);
+    transform: translate(-50%, -50%);
+    background-color: #eaebef;
   }
 }
 
@@ -185,6 +211,7 @@
 
 .wizard__item-unit {
   position: relative;
+  @include fontSize(1, 1.75);
   &:before {
     content: '';
     left: -0.75rem;
@@ -224,13 +251,19 @@
   }
 }
 
+.ico {
+  .article__title {
+    margin-bottom: 3rem;
+  }
+}
+
 .ico__descr {
   margin-bottom: 3rem;
 }
 
 .ico__descr-title {
   margin-bottom: 0;
-  font-weight: normal;
+  font-weight: 300;
   @include fontSize(1.125);
 }
 
@@ -296,10 +329,10 @@
 
 .footer__main {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   margin-bottom: 1rem;
   .company-logo {
-    min-width: 150px;
     margin-right: 3rem;
   }
   .mailto {
@@ -315,7 +348,7 @@
   display: flex;
   white-space: nowrap;
   a {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
 }
 

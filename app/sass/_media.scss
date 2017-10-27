@@ -1,0 +1,44 @@
+@media only screen and (max-width : 1366px) {
+  body, html {
+    font-size: 14px;
+  }
+  .wrapper {
+    width: 75%;
+  }
+}
+/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  .wrapper {
+    width: 95%;
+  }
+  .footer__main {
+    .company-logo {
+      img {
+        max-width: 110px;
+      }
+    }
+  }
+  .footer__second {
+    .stub {
+      min-width: 110px;
+    }
+  }
+}
+/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+/**/

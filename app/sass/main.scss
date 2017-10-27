@@ -2,11 +2,8 @@
 @import "vars";
 @import "mixins";
 @import "layout";
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
 
-
-
-// @import "media"; // Всегда в конце
 
 html {
   box-sizing: border-box;
@@ -66,16 +63,17 @@ article {
 
 h1 {
   @include fontSize(3, 3.5);
-  font-weight: normal;
+  font-weight: 300;
 }
 
 h2 {
   @include fontSize(2.5);
-  font-weight: normal;
+  font-weight: 300;
 }
 
 h3 {
   @include fontSize(1.5, 2);
+  font-weight: 300;
 }
 
 h5 {
@@ -90,4 +88,6 @@ body a {
     text-decoration: none;
   }
 }
+
+@import "media"; // Всегда в конце
 
